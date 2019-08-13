@@ -1,5 +1,8 @@
 <?php
 
+use SilverStripe\View\ViewableData;
+use SilverStripe\SiteConfig\SiteConfig;
+
 /**
  * Top level config holder for the social nav module
  *
