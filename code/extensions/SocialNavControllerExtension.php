@@ -1,7 +1,9 @@
 <?php
 
-use SilverStripe\Core\Extension;
+namespace  Toast\Social;
 
+use SilverStripe\Core\Extension;
+use Toast\Social\SocialNav;
 /**
  * Add socialnav hook to controllers
  *

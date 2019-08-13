@@ -1,4 +1,5 @@
 <?php
+namespace Toast\Social;
 
 use SilverStripe\View\ViewableData;
 use SilverStripe\SiteConfig\SiteConfig;
@@ -24,7 +25,7 @@ class SocialNav extends ViewableData
      * @var array
      * @config
      */
-    public static $service_names = array(
+    private static $service_names = array(
         "Facebook" => "Facebook",
         "Twitter" => "Twitter",
         "Google Plus" => "Google Plus",

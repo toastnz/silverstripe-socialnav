@@ -1,5 +1,7 @@
 <?php
+namespace Toast\Social;
 
+use Toast\Social\SocialNavLink;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Forms\GridField\GridField;
@@ -15,25 +17,14 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 class SocialNavSiteConfigExtension extends DataExtension
 {
 
-    public static $has_many = array(
+    private static $many_many = array(
         'SocialNavLinks' => SocialNavLink::class
     );
 
     public function updateCMSFields(FieldList $fields)
     {
-        // $fields->removeByName('SocialNavLinks');
-
-        // // Setup compressed postage options
-        // $socialnav_fields = ToggleCompositeField::create(
-        //     'SocialNavFields',
-        //     'Social Nav',
-        //     array(
-                
-        //     )
-        // );
-
         // Add config sets
-        $fields->addFieldToTab('Root.Main', GridField::create(
+        $fields->addFieldToTab('Root.Social', GridField::create(
             'SocialNavLinks',
             '',
             $this->owner->SocialNavLinks(),

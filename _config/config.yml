@@ -4,8 +4,8 @@ Name: socialnavconfig
 ## YML Config
 SilverStripe\Control\Controller:
   extensions:
-    - SocialNavControllerExtension
+    -  Toast\Social\SocialNavControllerExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - SocialNavSiteConfigExtension
+    - Toast\Social\SocialNavSiteConfigExtension
 

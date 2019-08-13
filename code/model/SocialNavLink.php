@@ -1,9 +1,15 @@
 <?php
+namespace Toast\Social;
 
+use SilverStripe\Dev\Debug;
+use Toast\Social\SocialNav;
 use SilverStripe\Core\Convert;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\RequiredFields;
+use SilverStripe\SiteConfig\SiteConfig;
+
+
 
 /**
  * Represents an item in the Social Nav
@@ -21,9 +27,9 @@ class SocialNavLink extends DataObject
         "ExtraClasses" => "Varchar"
     );
 
-    private static $has_one = array(
-        "Parent" => "SiteConfig"
-    );
+    private static $belongs_many_many = [
+        'Parent' => SiteConfig::class,
+    ];
 
     private static $casting = array(
         "ConvertedService" => "Varchar"
@@ -47,7 +53,7 @@ class SocialNavLink extends DataObject
         $fields->removeByName("ParentID");
 
         $service_names = SocialNav::config()->service_names;
-
+        
         $service_field = DropdownField::create("Service")
             ->setSource($service_names)
             ->setEmptyString(_t("SocialNav.SelectService", "Select social media service"));
