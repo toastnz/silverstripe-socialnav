@@ -27,7 +27,7 @@ class SocialNavLink extends DataObject
         "ExtraClasses" => "Varchar"
     );
 
-    private static $belongs_many_many = [
+    private static $has_one = [
         'Parent' => SiteConfig::class,
     ];
 

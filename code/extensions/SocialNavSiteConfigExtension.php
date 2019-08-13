@@ -17,7 +17,7 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 class SocialNavSiteConfigExtension extends DataExtension
 {
 
-    private static $many_many = array(
+    private static $has_many = array(
         'SocialNavLinks' => SocialNavLink::class
     );
 
