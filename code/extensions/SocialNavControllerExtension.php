@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Core\Extension;
+
 /**
  * Add socialnav hook to controllers
  *
